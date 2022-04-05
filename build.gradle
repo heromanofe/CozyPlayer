@@ -1,0 +1,40 @@
+buildscript {
+    ext.kotlin_version = "1.6.10"
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.20'
+        classpath('com.android.support:multidex:1.0.3')
+        classpath "org.jetbrains.kotlin:kotlin-serialization:1.6.10"
+        classpath "io.realm.kotlin:gradle-plugin:0.10.2"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+apply plugin: "io.realm.kotlin"
+
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    support_library_version = '1.0.0'
+}

@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="Widget.Theme.CozyPlayer.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+        <item name="exampleColor">@color/light_blue_400</item>
+    </style>
+
+    <style name="Widget.Theme.AppCompat.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+        <item name="exampleColor">@color/light_blue_400</item>
+    </style>
+
+    <style name="Widget.Theme.AppCompat.NoActionBar.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+        <item name="exampleColor">@color/light_blue_400</item>
+    </style>
+</resources>

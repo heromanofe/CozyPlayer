@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:isScrollContainer="true"
+        android:layout_gravity="start">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/followingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FOLLOWING"
+                    android:textSize="26sp"
+                    app:autoSizeTextType="uniform" />
+
+                <LinearLayout
+                    android:id="@+id/FollowingLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+
+                <TextView
+                    android:id="@+id/OtherChannelsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Other Channels"
+                    android:textSize="26sp"
+                    app:autoSizeTextType="uniform" />
+
+                <LinearLayout
+                    android:id="@+id/OtherChannelsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.navigation.NavigationView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">>
+
+                <ImageView
+                    android:id="@+id/GoBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="?attr/homeAsUpIndicator" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <com.example.cozyplayer.MyProfile
+                    android:id="@+id/LoginAccount"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:padding="4dp" />
+
+            </LinearLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <WebView
+            android:id="@+id/WebViewForLoggingIn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:visibility="gone">
+
+        </WebView>
+
+        <LinearLayout
+            android:id="@+id/tempLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="for now, not fully implemented. take cookie from your browser and put token here:" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/followingText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Currently Live"
+                    android:textSize="26sp"
+                    app:autoSizeTextType="uniform" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/curLiveLin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.example.cozyplayer.CozyReplayView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <com.example.cozyplayer.CozyReplayView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Watch Later"
+                    android:textSize="26sp"
+                    app:autoSizeTextType="uniform" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/watchLaterLin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.example.cozyplayer.CozyReplayView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <com.example.cozyplayer.CozyReplayView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Continue Watching"
+                    android:textSize="26sp"
+                    app:autoSizeTextType="uniform" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/continueWatchingLin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.example.cozyplayer.CozyReplayView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <com.example.cozyplayer.CozyReplayView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.cozyplayer.HomepageFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

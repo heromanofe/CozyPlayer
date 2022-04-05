@@ -1,0 +1,75 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:id="@+id/scrollC"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:id="@+id/chatMess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.cozyplayer.CozyChatMessage
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.example.cozyplayer.CozyChatMessage
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.example.cozyplayer.CozyChatMessage>
+
+            <com.example.cozyplayer.CozyChatMessage
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.example.cozyplayer.CozyChatMessage>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/messageContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:cursorVisible="true"
+            android:focusable="auto"
+            android:focusableInTouchMode="true"
+            android:gravity="bottom|start"
+            android:imeOptions="actionSend"
+            android:inputType="textImeMultiLine"
+            android:text="CHAT FOR NOW NOT IMPLEMENTED"
+            android:textSize="20sp"
+            app:autoSizeMaxTextSize="26sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeTextType="uniform" />
+
+        <ImageView
+            android:id="@+id/sendMessageButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:scaleType="centerCrop"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

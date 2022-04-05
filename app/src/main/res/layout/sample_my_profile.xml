@@ -1,16 +1,21 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.cozyplayer.MyProfile
-        style="@style/Widget.Theme.AppCompat.NoActionBar.MyView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:paddingLeft="20dp"
-        android:paddingBottom="40dp"
-        app:exampleDimension="24sp"
-        app:exampleDrawable="@android:drawable/ic_menu_add"
-        app:exampleString="Hello, MyProfile" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="360dp"
+        app:cardElevation="12dp">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/AvatarView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTintMode="add"
+            app:srcCompat="@color/light_blue_600" />
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
